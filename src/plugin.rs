@@ -227,7 +227,14 @@ async fn select(
         JsonValue::Null
       } else {
         match info.name() {
-          "VARCHAR" | "STRING" | "TEXT" | "DATETIME" | "varchar" | "text" | "datetime" => {
+          "VARCHAR"
+          | "STRING"
+          | "TEXT"
+          | "DATETIME"
+          | "varchar"
+          | "text"
+          | "datetime"
+          | "information_schema.sql_identifier" => {
             if let Ok(s) = row.try_get(i) {
               JsonValue::String(s)
             } else {
