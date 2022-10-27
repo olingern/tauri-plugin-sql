@@ -227,7 +227,7 @@ async fn select(
         JsonValue::Null
       } else {
         match info.name() {
-          "VARCHAR" | "STRING" | "TEXT" | "DATETIME" => {
+          "VARCHAR" | "STRING" | "TEXT" | "DATETIME" | "varchar" | "text" | "datetime" => {
             if let Ok(s) = row.try_get(i) {
               JsonValue::String(s)
             } else {
